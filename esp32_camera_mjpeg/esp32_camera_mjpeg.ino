@@ -142,6 +142,8 @@ void setup()
 #endif
 
   cam.init(config);
+  sensor_t * s = esp_camera_sensor_get();
+  s->set_vflip(s, 1);          // 0 = disable , 1 = enable
 
   IPAddress ip(192,168,1,132);
   IPAddress gateway(192, 168, 1, 1);
